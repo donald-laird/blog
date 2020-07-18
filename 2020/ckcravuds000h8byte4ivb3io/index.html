@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在Linux下使用icloud | 十年有多远 | by Donald Lai</title>
+
+  
+  <meta name="author" content="Donald Lai">
+  
+
+  
+  <meta name="description" content="需求场景由于我的Linux版本是i386的，无法愉快的使用云笔记之类的应用。我平时办公使用的是Mac，回家之后家里是使用老旧电脑配置的Linux系统，不同的电脑，不同的系统之间，很需要文件的同步和笔记应用的同步。这样不至于使每个电脑成为信息孤岛。这个问题困扰了我很久。
+其实家里主力电脑是用来上网课，浏览资料，也做做资料。Linux本身无法愉快的使用微信和QQ，这点倒是不在乎，这样在学习时才能完全实现浸入式。但是与平时上班时使用的MacbookPro要做一定同步，才能保持工作与生活的连贯性。特别是平时使用Mac和iphone已经能够做到很好的互联，使用的工具是icloud和onedrive，另外还有“有道云笔记”这样的应用。
+
+在i386版本下面，WPS Office只有x64位版本
+
+类似有道云笔记这样的应用竟然只能使用Web版本，而且只能使用旧版，容易误操作。
+
+onedrive需要使用个人开发的版本
+
+
+我在想着如何能更好的与平时使用的Mac和iphone互联与同步时，发现了snapcraft可以在Linux上使用icloud以及苹果的常用应用！这点非常开心。
+安装iCloud for Linux找到iCloud for Linux官网，看到这样的界面确实知道就是我们想要的。">
+  
+
+  
+  
+  <meta name="keywords" content="Mac,Linux,云同步,iCloud">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="在Linux下使用icloud"/>
+
+  <meta property="og:site_name" content="十年有多远"/>
+
+  
+  <meta property="og:image" content="/blog/favicon.ico"/>
+  
+
+  <link href="/blog/favicon.ico" rel="icon">
+  <link rel="alternate" href="/blog/atom.xml" title="十年有多远" type="application/atom+xml">
+  <link rel="stylesheet" href="/blog/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/blog/">十年有多远</a>
+    </h1>
+    <p class="site-description">by Donald Lai</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/blog/">Home</a></li>
+      
+        <li><a href="/blog/archives">Archives</a></li>
+      
+        <li><a href="/blog/categories">Categories</a></li>
+      
+        <li><a href="/blog/tags">Tags</a></li>
+      
+        <li><a href="/blog/about/me.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>在Linux下使用icloud</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/blog/2020/ckcravuds000h8byte4ivb3io/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-02T16:00:00.000Z">
+          2020-05-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h2><p>由于我的Linux版本是i386的，无法愉快的使用云笔记之类的应用。我平时办公使用的是Mac，回家之后家里是使用老旧电脑配置的Linux系统，不同的电脑，不同的系统之间，很需要文件的同步和笔记应用的同步。这样不至于使每个电脑成为信息孤岛。这个问题困扰了我很久。</p>
+<p>其实家里主力电脑是用来上网课，浏览资料，也做做资料。Linux本身无法愉快的使用微信和QQ，这点倒是不在乎，这样在学习时才能完全实现浸入式。但是与平时上班时使用的MacbookPro要做一定同步，才能保持工作与生活的连贯性。特别是平时使用Mac和iphone已经能够做到很好的互联，使用的工具是icloud和onedrive，另外还有“有道云笔记”这样的应用。</p>
+<ul>
+<li><p>在i386版本下面，WPS Office只有x64位版本</p>
+</li>
+<li><p>类似有道云笔记这样的应用竟然只能使用Web版本，而且只能使用旧版，容易误操作。</p>
+</li>
+<li><p>onedrive需要使用个人开发的版本</p>
+</li>
+</ul>
+<p>我在想着如何能更好的与平时使用的Mac和iphone互联与同步时，发现了snapcraft可以在Linux上使用icloud以及苹果的常用应用！这点非常开心。</p>
+<h2 id="安装iCloud-for-Linux"><a href="#安装iCloud-for-Linux" class="headerlink" title="安装iCloud for Linux"></a>安装iCloud for Linux</h2><p>找到<a href="https://snapcraft.io/icloud-for-linux" target="_blank" rel="noopener">iCloud for Linux</a>官网，看到这样的界面确实知道就是我们想要的。</p>
+<p><img src="https://donaldlai.gitee.io/upload_img/2020/icloud1.png" alt="img"></p>
+<a id="more"></a>
+<p>找到<a href="https://snapcraft.io/install/icloud-for-linux/ubuntu" target="_blank" rel="noopener">Ubuntu版本</a>，按提示先安装snapd。</p>
+<p><img src="https://donaldlai.gitee.io/upload_img/2020/icloud2.png" alt="img"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt update  </span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install snapd</span></span><br></pre></td></tr></table></figure>
+
+<p>再按提示安装 iCloud for Linux</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo snap install icloud-for-linux</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用iCloud-for-Linux"><a href="#使用iCloud-for-Linux" class="headerlink" title="使用iCloud for Linux"></a>使用iCloud for Linux</h2><p>快捷键Win+A打开程序界面，看到这样的图标是不是相当激动！</p>
+<p><img src="https://donaldlai.gitee.io/upload_img/2020/icloud3.png" alt="img"></p>
+<p>初次使用需要登录一个iCloud账户，登上自己使用的iCloud ID就好。</p>
+<p><img src="https://donaldlai.gitee.io/upload_img/2020/icloud4.png" alt="img"></p>
+<p>这样一来，便基本可以满足不同的电脑，不同的系统之间的同步关联。</p>
+<p>文件可以放iCloud云盘同步，还可以使用备忘录，日历，以及提醒事项。</p>
+<p>唯一的缺点就是有时候iCloud同步比较慢。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/blog/categories/Skills/">Skills</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/blog/tags/Mac/">Mac</a><a href="/blog/tags/Linux/">Linux</a><a href="/blog/tags/云同步/">云同步</a><a href="/blog/tags/iCloud/">iCloud</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 Donald Lai
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
