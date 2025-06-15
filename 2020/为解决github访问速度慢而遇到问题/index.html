@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>为解决github访问速度慢而遇到问题 | 十年有多远 | by Donald Lai</title>
+
+  
+  <meta name="author" content="Donald Lai">
+  
+
+  
+  <meta name="description" content="一直以来，在使用github这个问题上，相信跟许多朋友一样都会遇到速度慢的问题。由此也一直在网上找些相关的解决方法，可是都不那么尽人意，网上的解决方法基本是直接修改hosts文件。我来试了试，却不那么尽人意。
+网上的方法大致这样。
+1. 修改本地hosts文件
+
+
+12windows系统的hosts">
+  
+
+  
+  
+  <meta name="keywords" content="Mac,Github">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="为解决github访问速度慢而遇到问题"/>
+
+  <meta property="og:site_name" content="十年有多远"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="十年有多远" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">十年有多远</a>
+    </h1>
+    <p class="site-description">by Donald Lai</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/about/me.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>为解决github访问速度慢而遇到问题</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/为解决github访问速度慢而遇到问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-03-19T16:00:00.000Z">
+          2020-03-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>一直以来，在使用github这个问题上，相信跟许多朋友一样都会遇到速度慢的问题。由此也一直在网上找些相关的解决方法，可是都不那么尽人意，网上的解决方法基本是直接修改hosts文件。我来试了试，却不那么尽人意。</p>
+<p>网上的方法大致这样。</p>
+<h3 id="1-修改本地hosts文件"><a href="#1-修改本地hosts文件" class="headerlink" title="1. 修改本地hosts文件"></a>1. 修改本地hosts文件</h3><!---more--->
+
+<blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">windows系统的hosts文件的位置如下：C:\Windows\System32\drivers\etc\hosts</span><br><span class="line">mac/linux系统的hosts文件的位置如下：/etc/hosts</span><br></pre></td></tr></table></figure></blockquote>
+<p>我在mac终端上，<code>sudo -i</code>进入root，vim打开<code>/etc/hosts</code>文件。</p>
+<h3 id="2-增加http-github-global-ssl-fastly-net-和-http-github-com-的映射"><a href="#2-增加http-github-global-ssl-fastly-net-和-http-github-com-的映射" class="headerlink" title="2. 增加http://github.global.ssl.fastly.net 和 http://github.com 的映射"></a>2. 增加<a target="_blank" rel="noopener" href="http://github.global.ssl.fastly.net/">http://github.global.ssl.fastly.net</a> 和 <a target="_blank" rel="noopener" href="http://github.com/">http://github.com</a> 的映射</h3><blockquote>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">访问https://www.ipaddress.com，拉下来，找到页面中下方的“IP Address Tools – Quick Links”</span><br><span class="line">分别输入github.global.ssl.fastly.net和github.com，查询ip地址</span><br><span class="line">下面是我的配置</span><br><span class="line">140.82.113.3	github.com</span><br><span class="line">199.232.69.194	github.global.ssl.fastly.net</span><br></pre></td></tr></table></figure></blockquote>
+<p>相信每个朋友通过ipaddress.com查询出来的都略微有些不同。</p>
+<h3 id="3-在终端输入ping-github-com能通了"><a href="#3-在终端输入ping-github-com能通了" class="headerlink" title="3. 在终端输入ping github.com能通了"></a>3. 在终端输入<code>ping github.com</code>能通了</h3><blockquote>
+<p>192:etc root# ping github.com<br>PING github.com (140.82.113.3): 56 data bytes<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;0 ttl&#x3D;46 time&#x3D;294.942 ms<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;1 ttl&#x3D;45 time&#x3D;358.485 ms<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;2 ttl&#x3D;45 time&#x3D;248.815 ms<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;3 ttl&#x3D;45 time&#x3D;251.610 ms<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;4 ttl&#x3D;44 time&#x3D;292.832 ms<br>64 bytes from 140.82.113.3: icmp_seq&#x3D;5 ttl&#x3D;45 time&#x3D;256.472 ms</p>
+</blockquote>
+<p>可是网页去一直打不开。</p>
+<h3 id="4-修改"><a href="#4-修改" class="headerlink" title="4. 修改"></a>4. 修改</h3><p>重新回到<code>/etc/hosts</code>，将<code>140.82.113.3	github.com</code>这句删除，保存并退出。问题就解决了。</p>
+<p>在我一知半解的情况下，觉得应该是https协议导致能ping通，却打不开网站。不知道是否为正解。</p>
+<h3 id="5-TODO"><a href="#5-TODO" class="headerlink" title="5. TODO"></a>5. TODO</h3><p>待理清原因，或发现更好的解决方法再补充。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Skills/">Skills</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Mac/">Mac</a><a href="/tags/Github/">Github</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2025 Donald Lai
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

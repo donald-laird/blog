@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Gitee+Hexo搭建个人博客 | 十年有多远 | by Donald Lai</title>
+
+  
+  <meta name="author" content="Donald Lai">
+  
+
+  
+  <meta name="description" content="作为典型的理工男毕业生，毕业十年有余，重新又要开博了。虽然不能保证持之以恒，主要是接触了新的技术，总想尝试着做点什么。带着这份天然的好奇心，一点一点的摸索，就又开始了使用博客这个古老的伎俩。不这过次不是使用wordpress之类成型的博客程序，而是因为看上了GitHub这样方便的免费工具。又因为国内访问GitHub速度奇慢，又发现了Gitee，尝试了几次，天然喜爱折腾的我又开始了。">
+  
+
+  
+  
+  <meta name="keywords" content="Mac,Hexo,Gitee">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="使用Gitee+Hexo搭建个人博客"/>
+
+  <meta property="og:site_name" content="十年有多远"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="十年有多远" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">十年有多远</a>
+    </h1>
+    <p class="site-description">by Donald Lai</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/about/me.html">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>使用Gitee+Hexo搭建个人博客</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/使用Gitee+Hexo搭建个人博客/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-03-16T16:00:00.000Z">
+          2020-03-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>作为典型的理工男毕业生，毕业十年有余，重新又要开博了。虽然不能保证持之以恒，主要是接触了新的技术，总想尝试着做点什么。带着这份天然的好奇心，一点一点的摸索，就又开始了使用博客这个古老的伎俩。不这过次不是使用wordpress之类成型的博客程序，而是因为看上了GitHub这样方便的免费工具。又因为国内访问GitHub速度奇慢，又发现了Gitee，尝试了几次，天然喜爱折腾的我又开始了。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li>Git</li>
+<li>NodeJs</li>
+</ul>
+<p>我是使用Mac OS半年有余了，越来越喜爱这个操作系统。Git之前已经安装了，这次发现没有NodeJs，所以到<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">NodeJs官网</a>安装一个。国内网线下载经常断，我试了10来次才成功下载了10多M的安装包。只需在终端按主页的显示输入代码安装即可。</p>
+<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="1、安装Hexo"><a href="#1、安装Hexo" class="headerlink" title="1、安装Hexo"></a>1、安装Hexo</h3><p>打开shell终端，进入<code>sudo -i</code>进入root</p>
+<h3 id="2、添加环境变量"><a href="#2、添加环境变量" class="headerlink" title="2、添加环境变量"></a>2、添加环境变量</h3><p>安装以后，可以使用以下两种方式执行 Hexo：</p>
+<ol>
+<li><p><code>npm install hexo-cli -g </code></p>
+</li>
+<li><p>将 Hexo 所在的目录下的 <code>node_modules</code> 添加到环境变量之中即可直接使用 <code>hexo </code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;PATH=&quot;$PATH:./node_modules/.bin&quot;&#x27; &gt;&gt; ~/.profile</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="3、初始化Hexo"><a href="#3、初始化Hexo" class="headerlink" title="3、初始化Hexo"></a>3、初始化Hexo</h3><p>在你的电脑上创建<code>Hexo</code>文件夹，在shell终端中切换到<code>Hexo</code>目录，输入命令 <code>hexo init</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">ldd@MacBook-Pro blog % hexo init</span><br><span class="line">INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git</span><br><span class="line">Cloning into &#x27;/Users/laidongdong/OneDrive/gitee/blog&#x27;...</span><br><span class="line">remote: Enumerating objects: 30, done.</span><br><span class="line">remote: Counting objects: 100% (30/30), done.</span><br><span class="line">remote: Compressing objects: 100% (24/24), done.</span><br><span class="line">remote: Total 161 (delta 12), reused 12 (delta 4), pack-reused 131</span><br><span class="line">Receiving objects: 100% (161/161), 31.79 KiB | 93.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (74/74), done.</span><br><span class="line">Submodule &#x27;themes/landscape&#x27; (https://github.com/hexojs/hexo-theme-landscape.git) registered for path &#x27;themes/landscape&#x27;</span><br><span class="line">Cloning into &#x27;/Users/laidongdong/OneDrive/gitee/blog/themes/landscape&#x27;...</span><br><span class="line">remote: Enumerating objects: 9, done.        </span><br><span class="line">remote: Counting objects: 100% (9/9), done.        </span><br><span class="line">remote: Compressing objects: 100% (9/9), done.        </span><br><span class="line">remote: Total 1063 (delta 1), reused 1 (delta 0), pack-reused 1054        </span><br><span class="line">Receiving objects: 100% (1063/1063), 3.22 MiB | 375.00 KiB/s, done.</span><br><span class="line">Resolving deltas: 100% (582/582), done.</span><br><span class="line">Submodule path &#x27;themes/landscape&#x27;: checked out &#x27;73a23c51f8487cfcd7c6deec96ccc7543960d350&#x27;</span><br><span class="line">INFO  Install dependencies</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">fsevents@1.2.11 install /Users/laidongdong/OneDrive/gitee/blog/node_modules/nunjucks/node_modules/fsevents</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node-gyp rebuild</span></span><br><span class="line"></span><br><span class="line">  SOLINK_MODULE(target) Release/.node</span><br><span class="line">  CXX(target) Release/obj.target/fse/fsevents.o</span><br><span class="line">  SOLINK_MODULE(target) Release/fse.node</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">ejs@2.7.4 postinstall /Users/laidongdong/OneDrive/gitee/blog/node_modules/ejs</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node ./postinstall.js</span></span><br><span class="line"></span><br><span class="line">Thank you for installing EJS: built with the Jake JavaScript build tool (https://jakejs.com/)</span><br><span class="line"></span><br><span class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</span><br><span class="line">added 445 packages from 499 contributors and audited 2632 packages in 39.333s</span><br><span class="line"></span><br><span class="line">5 packages are looking for funding</span><br><span class="line">  run `npm fund` for details</span><br><span class="line"></span><br><span class="line">found 0 vulnerabilities</span><br><span class="line"></span><br><span class="line">INFO  Start blogging with Hexo!</span><br><span class="line">ldd@MacBook-Pro blog % </span><br><span class="line">ldd@MacBook-Pro blog % </span><br><span class="line">ldd@MacBook-Pro blog % ls</span><br><span class="line">_config.yml		package.json		themes</span><br><span class="line">node_modules		scaffolds</span><br><span class="line">package-lock.json	source</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="4、获取博客主题"><a href="#4、获取博客主题" class="headerlink" title="4、获取博客主题"></a>4、获取博客主题</h3><p>我使用的是<a target="_blank" rel="noopener" href="https://github.com/CodeDaraW/Hacker">Hacker主题</a>，到它的<a target="_blank" rel="noopener" href="https://github.com/CodeDaraW/Hacker">GitHub</a>直接下载。</p>
+<p>可以使用下面命令轻松获得。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/CodeDaraW/Hacker.git</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5、本地预览博客"><a href="#5、本地预览博客" class="headerlink" title="5、本地预览博客"></a>5、本地预览博客</h3><p>编译项目，输入命令：<code>hexo g</code><br>运行项目，输入命令：<code>hexo s</code></p>
+<p>如果成功，跳过第6步。</p>
+<p>本人在使用<code>hexo g</code>命令时，出现下面错误：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INFO  Checking dependencies</span><br><span class="line">ERROR Package cheerio is not installed.</span><br><span class="line">ERROR Package hexo-renderer-sass is not installed.</span><br><span class="line">ERROR Please install the missing dependencies in the root directory of your Hexo site.</span><br></pre></td></tr></table></figure>
+
+<p>按提示信息发现是缺少了2个组件，需要先安装。</p>
+<h3 id="6、安装cheerio和hexo-renderer-sass组件"><a href="#6、安装cheerio和hexo-renderer-sass组件" class="headerlink" title="6、安装cheerio和hexo-renderer-sass组件"></a>6、安装cheerio和hexo-renderer-sass组件</h3><p>用<code>npm</code>命令先安装cheerio，这个可以正常安装，如下提示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install cheerio</span><br><span class="line">npm WARN saveError ENOENT: no such file or directory, open &#x27;/private/var/root/package.json&#x27;</span><br><span class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</span><br><span class="line">npm WARN enoent ENOENT: no such file or directory, open &#x27;/private/var/root/package.json&#x27;</span><br><span class="line">npm WARN root No description</span><br><span class="line">npm WARN root No repository field.</span><br><span class="line">npm WARN root No README data</span><br><span class="line">npm WARN root No license field.</span><br><span class="line"></span><br><span class="line">+ cheerio@1.0.0-rc.3</span><br><span class="line">added 19 packages from 51 contributors and audited 34 packages in 6.621s</span><br><span class="line">found 0 vulnerabilities</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>接下来，继续用<code>npm</code>命令安装hexo-renderer-sass，这次发现失败了。如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-sass</span><br><span class="line">npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node-sass@4.13.1 install /private/var/root/node_modules/node-sass</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">node scripts/install.js</span></span><br><span class="line"></span><br><span class="line">shell-init: error retrieving current directory: getcwd: cannot access parent directories: Permission denied</span><br><span class="line">internal/bootstrap/switches/does_own_process_state.js:128</span><br><span class="line">  cachedCwd = rawMethods.cwd();</span><br><span class="line">                         ^</span><br><span class="line"></span><br><span class="line">Error: EACCES: permission denied, uv_cwd</span><br><span class="line">    at process.wrappedCwd [as cwd] (internal/bootstrap/switches/does_own_process_state.js:128:26)</span><br><span class="line">    at Object.resolve (path.js:978:47)</span><br><span class="line">    at patchProcessObject (internal/bootstrap/pre_execution.js:89:28)</span><br><span class="line">    at prepareMainThreadExecution (internal/bootstrap/pre_execution.js:16:3)</span><br><span class="line">    at internal/main/run_main_module.js:7:1 &#123;</span><br><span class="line">  errno: -13,</span><br><span class="line">  code: &#x27;EACCES&#x27;,</span><br><span class="line">  syscall: &#x27;uv_cwd&#x27;</span><br><span class="line">&#125;</span><br><span class="line">npm WARN enoent ENOENT: no such file or directory, open &#x27;/private/var/root/package.json&#x27;</span><br><span class="line">npm WARN hexo-renderer-sass@0.4.0 requires a peer of hexo@&gt;= 3 but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN root No description</span><br><span class="line">npm WARN root No repository field.</span><br><span class="line">npm WARN root No README data</span><br><span class="line">npm WARN root No license field.</span><br><span class="line"></span><br><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno 1</span><br><span class="line">npm ERR! node-sass@4.13.1 install: `node scripts/install.js`</span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line">npm ERR! </span><br><span class="line">npm ERR! Failed at the node-sass@4.13.1 install script.</span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</span><br><span class="line"></span><br><span class="line">npm ERR! A complete log of this run can be found in:</span><br><span class="line">npm ERR!     /var/root/.npm/_logs/2020-03-16T11_02_43_283Z-debug.log</span><br></pre></td></tr></table></figure>
+
+<p>改用淘宝镜像：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>再次安装，成功了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install cheerio</span><br><span class="line">cnpm install hexo-renderer-sass --save</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">✔ Installed 1 packages</span><br><span class="line">✔ Linked 169 latest versions</span><br><span class="line">[1/1] scripts.install hexo-renderer-sass@0.4.0 › node-sass@^4.5.3 run &quot;node scripts/install.js&quot;, root: &quot;/private/var/root/node_modules/_node-sass@4.13.1@node-sass&quot;</span><br><span class="line">Downloading binary from https://cdn.npm.taobao.org/dist/node-sass/v4.13.1/darwin-x64-72_binding.node</span><br><span class="line">Download complete</span><br><span class="line">Binary saved to /private/var/root/node_modules/_node-sass@4.13.1@node-sass/vendor/darwin-x64-72/binding.node</span><br><span class="line">Caching binary to /var/root/.npminstall_tarball/node-sass/4.13.1/darwin-x64-72_binding.node</span><br><span class="line">[1/1] scripts.install hexo-renderer-sass@0.4.0 › node-sass@^4.5.3 finished in 2s</span><br><span class="line">[1/1] scripts.postinstall hexo-renderer-sass@0.4.0 › node-sass@^4.5.3 run &quot;node scripts/build.js&quot;, root: &quot;/private/var/root/node_modules/_node-sass@4.13.1@node-sass&quot;</span><br><span class="line">Binary found at /private/var/root/node_modules/_node-sass@4.13.1@node-sass/vendor/darwin-x64-72/binding.node</span><br><span class="line">Testing binary</span><br><span class="line">Binary is fine</span><br><span class="line">[1/1] scripts.postinstall hexo-renderer-sass@0.4.0 › node-sass@^4.5.3 finished in 130ms</span><br><span class="line">✔ Run 1 scripts</span><br><span class="line">peerDependencies WARNING hexo-renderer-sass@* requires a peer of hexo@&gt;= 3 but none was installed</span><br><span class="line">Recently updated (since 2020-03-09): 1 packages (detail see file /private/var/root/node_modules/.recently_updates.txt)</span><br><span class="line">✔ All packages installed (179 packages installed from npm registry, used 7s(network 5s), speed 659.5kB/s, json 170(321.96kB), tarball 2.97MB)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="部署博客到Gitee上"><a href="#部署博客到Gitee上" class="headerlink" title="部署博客到Gitee上"></a>部署博客到Gitee上</h2><h3 id="1、在-config-yml中配置Git"><a href="#1、在-config-yml中配置Git" class="headerlink" title="1、在_config.yml中配置Git"></a>1、在_config.yml中配置Git</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://gitee.com/xiuxiuing/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>注意：冒号后面一定要有空格，否则不能正确识别。</p>
+<h3 id="2、发布到Gitee"><a href="#2、发布到Gitee" class="headerlink" title="2、发布到Gitee"></a>2、发布到Gitee</h3><p>输入命令<code>npm install hexo-deployer-git --save</code> 安装自动部署发布工具</p>
+<p>如下显示安装成功。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">✔ Installed 1 packages</span><br><span class="line">✔ Linked 6 latest versions</span><br><span class="line">✔ Run 0 scripts</span><br><span class="line">✔ All packages installed (1 packages installed from npm registry, used 923ms(network 922ms), speed 41.95kB/s, json 7(33.27kB), tarball 5.41kB)</span><br></pre></td></tr></table></figure>
+
+<p>输入命令<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code> 发布博客，首次发布需要在shell中输入账号和密码。</p>
+<p>平时本地化调试可以使用命令<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>。</p>
+<h2 id="其它常用插件"><a href="#其它常用插件" class="headerlink" title="其它常用插件"></a>其它常用插件</h2><h3 id="1、添加RSS"><a href="#1、添加RSS" class="headerlink" title="1、添加RSS"></a>1、添加RSS</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>显示成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">✔ Installed 1 packages</span><br><span class="line">✔ Linked 2 latest versions</span><br><span class="line">✔ Run 0 scripts</span><br><span class="line">✔ All packages installed (1 packages installed from npm registry, used 978ms(network 976ms), speed 16.1kB/s, json 3(10.44kB), tarball 5.27kB)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Hexo的常用基本操作"><a href="#Hexo的常用基本操作" class="headerlink" title="Hexo的常用基本操作"></a>Hexo的常用基本操作</h2><h3 id="1、文件头格式和分类的方法-2"><a href="#1、文件头格式和分类的方法-2" class="headerlink" title="1、文件头格式和分类的方法^2"></a>1、文件头格式和分类的方法<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">^2</a></h3><h4 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h4><p>文件头格式Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left">布局</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left">标题</td>
+<td align="left">文章的文件名</td>
+</tr>
+<tr>
+<td align="left"><code>date</code></td>
+<td align="left">建立日期</td>
+<td align="left">文件建立日期</td>
+</tr>
+<tr>
+<td align="left"><code>updated</code></td>
+<td align="left">更新日期</td>
+<td align="left">文件更新日期</td>
+</tr>
+<tr>
+<td align="left"><code>comments</code></td>
+<td align="left">开启文章的评论功能</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>tags</code></td>
+<td align="left">标签（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>categories</code></td>
+<td align="left">分类（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>permalink</code></td>
+<td align="left">覆盖文章网址</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>keywords</code></td>
+<td align="left">仅用于 meta 标签和 Open Graph 的关键词（不推荐使用）</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h4 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h4><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- Diary</span><br><span class="line">tags:</span><br><span class="line">- PS3</span><br><span class="line">- Games</span><br></pre></td></tr></table></figure>
+
+<p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - Diary</span><br><span class="line">  - Life</span><br></pre></td></tr></table></figure>
+
+<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br></pre></td></tr></table></figure>
+
+<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Skills/">Skills</a>, <a href="/categories/Notes/">Notes</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Mac/">Mac</a><a href="/tags/Hexo/">Hexo</a><a href="/tags/Gitee/">Gitee</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2025 Donald Lai
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
